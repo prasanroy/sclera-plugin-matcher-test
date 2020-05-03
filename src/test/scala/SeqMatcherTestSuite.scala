@@ -35,6 +35,7 @@ extends AnyFunSpec with CancelAfterFailure with SqlTestRunner {
 
     def getConnection(props: Properties): Connection = if( isTravis ) {
         // Travis CI does not like JDBC
+        println("*** BYPASSING JDBC ***")
         val driver: ScleraJdbcDriver = new ScleraJdbcDriver
         driver.connect(jdbcUrl, props)
     } else DriverManager.getConnection(jdbcUrl, props)
