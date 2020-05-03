@@ -29,8 +29,6 @@ import com.scleradb.sqltests.runner.SqlTestRunner
 class SeqMatcherTestSuite
 extends AnyFunSpec with CancelAfterFailure with SqlTestRunner {
     val jdbcUrl: String = "jdbc:scleradb"
-    private val jdbcDriverClass: Class[com.scleradb.interfaces.jdbc.Driver] =
-        classOf[com.scleradb.interfaces.jdbc.Driver]
 
     var conn: Connection = null
     var stmt: Statement = null
